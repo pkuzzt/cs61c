@@ -1,6 +1,6 @@
 /*
  * This is so the C preprocessor does not try to include multiple copies
- * of the header file if someone uses multiple #include directives.
+  of the header file if someone uses multiple #include directives.
  */
 #ifndef _HASHTABLE_H_
 #define _HASHTABLE_H_
@@ -28,6 +28,10 @@ struct HashBucket {
 typedef struct HashTable {
   // -- TODO --
   // HINT: Take a look at createHashTable.
+  void **data;
+  unsigned int (*hashFunction)(void *);
+  int (*equalFunction)(void *, void *);
+  int size;
 } HashTable;
 
 /*
@@ -38,20 +42,10 @@ extern HashTable *createHashTable(int size,
                                   unsigned int (*hashFunction)(void *),
                                   int (*equalFunction)(void *, void *));
 
-/*
- * This inserts a key/data pair into a hash table.  To use this
- * to store strings, simply cast the char * to a void * (e.g., to store
- * the string referred to by the declaration char *string, you would
- * call insertData(someHashTable, (void *) string, (void *) string).
- * Because we only need a set data structure for this spell checker,
- * we can use the string as both the key and data.
- */
+
 extern void insertData(HashTable *table, void *key, void *data);
 
-/*
- * This returns the corresponding data for a given key.
- * It returns NULL if the key is not found. 
- */
+
 extern void *findData(HashTable *table, void *key);
 
 #endif
