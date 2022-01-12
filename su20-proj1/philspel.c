@@ -112,6 +112,10 @@ void readDictionary(char *dictName) {
   char *buffer = (char*) malloc(sizeof(char) * len); 
   char last_ch;
   FILE *fp = fopen(dictName, "r");
+  if (fp == NULL) {
+    fprintf(stderr, "Error: file path \"%s\" is invalid!\n", dictName);
+    exit(1);
+  }
   while (1) {
     buffer = readword(fp, buffer, &last_ch, &len);
     if (last_ch == EOF) {
