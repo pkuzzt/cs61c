@@ -1,4 +1,5 @@
-1. find
-2. top
-3. kill
-4. diff
+1. ls -al
+2. find
+3. top
+4. kill
+5. diff
