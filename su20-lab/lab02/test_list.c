@@ -92,9 +92,9 @@ int main() {
 		    (*smallList)->val, (*smallList)->next);
 
 	if (is_correct) {
-		printf("\n\n--------------TEST PASSED----------------");
+		printf("\n\n--------------TEST PASSED----------------\n");
 	} else{
-		printf("\n\n--------------TEST FAILED----------------");
+		printf("\n\n--------------TEST FAILED----------------\n");
 	}
 
 	return !is_correct;
