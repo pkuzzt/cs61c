@@ -42,7 +42,6 @@ loop_end:
     lw s0, 0(sp)
     lw s1, 0(sp)
     addi sp, sp, 8
-    addi a0, t3, 0
     ret
 
 argmax_exit:
