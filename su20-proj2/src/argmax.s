@@ -15,27 +15,36 @@
 # this function exits with error code 7.
 # =================================================================
 argmax:
-
-    # Prologue
-
-
+    addi t0, a0, 0
+    addi t1, a1, 0
+    addi t2, x0, 0
+    addi t3, x0, 0
+    bge x0, t1, argmax_exit
+    addi sp, sp, -8
+    sw s0, 0(sp)
+    sw s1, 4(sp)
 loop_start:
-
-
-
-
-
-
-
-
+    slli s0, t2, 2
+    slli s1, t3, 2
+    add s0, s0, t0
+    add s1, s1, t0
+    lw s0, 0(s0) # s0 = A[i]
+    lw s1, 0(s1) # s1 = A[arg]
+    slt t4, s1, s0 # t4 = (A[arg] < A[i]) ? 1 : 0
+    sub t5, t2, t3 # t5 = i - arg
+    mul t5, t5, t4
+    add t3, t3, t5
+    addi t2, t2, 1
 loop_continue:
-
-
-
+    bge t2, t1, loop_end
+    jal x0, loop_start
 loop_end:
-    
-
-    # Epilogue
-
-
+    lw s0, 0(sp)
+    lw s1, 0(sp)
+    addi sp, sp, 8
+    addi a0, t3, 0
     ret
+
+argmax_exit:
+    addi a1, x0, 7
+    jal exit2
