@@ -24,18 +24,69 @@
 # this function exits with error code 52.
 # ==============================================================================
 read_matrix:
-
+    addi sp, sp, -4
+    sw ra, 0(sp)
     # Prologue
-	
-
-
-
-
-
-
-
-
+    mv t0, a0 # t0 = filename
+    mv t1, a1 # t1 = *nrow
+    mv t2, a2 # t2 = *ncolumn
+    # call fopen
+    mv a1, t0
+    li a2, 0
+    jal ra, fopen
+    # error 
+    blt a0, x0, read_matrix_exit1
+    mv t3, a0 # t3 = file t0 read
+    # read nrow, ncolumn
+    mv a1, t3
+    mv a2, t1
+    li a3, 4
+    jal ra, fread
+    # error 
+    addi a0, -4
+    bne a0, x0, read_matrix_exit2
+    mv a1, t3
+    mv a2, t2
+    li a3, 4
+    jal ra, fread
+    # error
+    addi a0, -4
+    bne a0, x0, read_matrix_exit2
+    # get length
+    lw t4, t1
+    lw t5, t2
+    mul t4, t4, t5 # t4 = nrow * ncolumn
+    # call malloc
+    mv a0, t4
+    jal ra, malloc
+    mv t5, a0 # t5 = *m
+    # read m
+    slli t4, t4, 2
+    mv a1, t3
+    mv a2, t5
+    mv a3, t4
+    jal ra, fread
+    # error 
+    bne a0, t4, read_matrix_exit2
+    # call fclose
+    mv a1, t3
+    jal ra, fclose
+    # error 
+    bne a0, x0, read_matrix_exit3
     # Epilogue
-
-
+    lw ra, 0(sp)
+    addi sp, sp, 4
+    mv a0, t5
     ret
+
+read_matrix_exit1:
+    li a1, 50
+    jal ra, exit2
+
+read_matrix_exit2:
+    li a1, 51
+    jal ra, exit2
+
+read_matrix_exit3:
+    li a1, 52
+    jal ra, exit2
