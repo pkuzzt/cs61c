@@ -60,6 +60,7 @@ read_matrix:
     mv a0, t4
     jal ra, malloc
     mv t5, a0 # t5 = *m
+    beq a0, x0, read_matrix_exit
     # read m
     slli t4, t4, 2
     mv a1, t3
@@ -78,6 +79,10 @@ read_matrix:
     addi sp, sp, 4
     mv a0, t5
     ret
+
+read_matrix_exit:
+    li a1, 48
+    jal ra, exit2
 
 read_matrix_exit1:
     li a1, 50
