@@ -87,6 +87,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
   </lib>
   <lib desc="#Plexers" name="2">
     <tool name="Multiplexer">
+      <a name="select" val="3"/>
       <a name="enable" val="false"/>
     </tool>
     <tool name="Demultiplexer">
@@ -125,7 +126,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
   </lib>
   <lib desc="#Memory" name="4">
     <tool name="Register">
-      <a name="width" val="32"/>
+      <a name="width" val="16"/>
     </tool>
     <tool name="Counter">
       <a name="width" val="32"/>
@@ -150,7 +151,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#../../../cpu.circ" name="7"/>
+  <lib desc="file#/Users/zzt/self-study/cs61c/su20-proj3/cpu.circ" name="7"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -205,7 +206,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(650,420)" to="(650,450)"/>
     <wire from="(870,310)" to="(910,310)"/>
     <wire from="(640,110)" to="(640,140)"/>
-    <wire from="(200,860)" to="(200,890)"/>
+    <wire from="(300,580)" to="(300,610)"/>
     <wire from="(660,160)" to="(660,180)"/>
     <wire from="(1560,820)" to="(1560,890)"/>
     <wire from="(730,110)" to="(730,130)"/>
@@ -401,13 +402,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="bit30" val="none"/>
       <a name="bit31" val="none"/>
     </comp>
-    <comp lib="0" loc="(200,890)" name="Clock">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(200,860)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="label" val="clk"/>
-    </comp>
     <comp lib="6" loc="(1541,697)" name="Text">
       <a name="text" val="Halts Execution After Constant # of Clock Cycles"/>
       <a name="font" val="SansSerif plain 16"/>
@@ -432,6 +426,13 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
       <a name="facing" val="east"/>
       <a name="width" val="32"/>
       <a name="label" val="Instruction"/>
+    </comp>
+    <comp lib="0" loc="(300,610)" name="Clock">
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(300,580)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="clk"/>
     </comp>
   </circuit>
 </project>
