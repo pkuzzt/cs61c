@@ -286,7 +286,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(1650,690)" to="(1670,690)"/>
     <wire from="(470,1320)" to="(470,1370)"/>
     <wire from="(240,490)" to="(250,490)"/>
-    <wire from="(1710,1310)" to="(1730,1310)"/>
     <wire from="(1080,920)" to="(1100,920)"/>
     <wire from="(1080,1080)" to="(1100,1080)"/>
     <wire from="(1290,490)" to="(1310,490)"/>
@@ -370,6 +369,7 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <wire from="(250,720)" to="(270,720)"/>
     <wire from="(410,720)" to="(430,720)"/>
     <wire from="(460,690)" to="(480,690)"/>
+    <wire from="(1710,1310)" to="(1720,1310)"/>
     <wire from="(180,1050)" to="(200,1050)"/>
     <wire from="(180,970)" to="(200,970)"/>
     <wire from="(1690,730)" to="(1700,730)"/>
@@ -1182,10 +1182,6 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(1430,1310)" name="Tunnel">
       <a name="label" val="MemRW_1"/>
     </comp>
-    <comp lib="0" loc="(1730,1310)" name="Tunnel">
-      <a name="width" val="2"/>
-      <a name="label" val="WBSel_1"/>
-    </comp>
     <comp lib="0" loc="(1220,460)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="32"/>
@@ -1312,6 +1308,10 @@ This file is intended to be loaded by Logisim-evolution (https://github.com/reds
     <comp lib="0" loc="(500,830)" name="Tunnel">
       <a name="width" val="32"/>
       <a name="label" val="inst"/>
+    </comp>
+    <comp lib="0" loc="(1720,1310)" name="Tunnel">
+      <a name="width" val="2"/>
+      <a name="label" val="WBSel_1"/>
     </comp>
   </circuit>
 </project>
