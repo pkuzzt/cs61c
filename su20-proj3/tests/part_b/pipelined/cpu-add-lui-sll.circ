@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project source="2.14.6" version="1.0">
-  This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
-
-  <lib desc="#Wiring" name="0">
+This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
+<lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="facing" val="west"/>
       <a name="incoming" val="32"/>
@@ -88,6 +87,7 @@
   </lib>
   <lib desc="#Plexers" name="2">
     <tool name="Multiplexer">
+      <a name="select" val="3"/>
       <a name="enable" val="false"/>
     </tool>
     <tool name="Demultiplexer">
@@ -126,7 +126,7 @@
   </lib>
   <lib desc="#Memory" name="4">
     <tool name="Register">
-      <a name="width" val="32"/>
+      <a name="width" val="16"/>
     </tool>
     <tool name="Counter">
       <a name="width" val="32"/>
@@ -151,7 +151,7 @@
       <a name="valign" val="base"/>
     </tool>
   </lib>
-  <lib desc="file#../../../cpu.circ" name="7"/>
+  <lib desc="file#/Users/zzt/self-study/cs61c/su20-proj3/cpu.circ" name="7"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -205,7 +205,7 @@
     <wire from="(810,170)" to="(810,180)"/>
     <wire from="(1070,760)" to="(1110,760)"/>
     <wire from="(570,310)" to="(610,310)"/>
-    <wire from="(200,860)" to="(200,890)"/>
+    <wire from="(320,340)" to="(320,370)"/>
     <wire from="(1560,820)" to="(1560,890)"/>
     <wire from="(1650,890)" to="(1650,960)"/>
     <wire from="(900,660)" to="(1110,660)"/>
@@ -381,13 +381,6 @@
       <a name="bit30" val="none"/>
       <a name="bit31" val="none"/>
     </comp>
-    <comp lib="0" loc="(200,890)" name="Clock">
-      <a name="facing" val="north"/>
-    </comp>
-    <comp lib="0" loc="(200,860)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="label" val="clk"/>
-    </comp>
     <comp lib="6" loc="(1541,697)" name="Text">
       <a name="text" val="Halts Execution After Constant # of Clock Cycles"/>
       <a name="font" val="SansSerif plain 16"/>
@@ -498,5 +491,12 @@
       <a name="label" val="sp"/>
     </comp>
     <comp lib="7" loc="(870,310)" name="main"/>
+    <comp lib="0" loc="(320,340)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="label" val="clk"/>
+    </comp>
+    <comp lib="0" loc="(320,370)" name="Clock">
+      <a name="facing" val="north"/>
+    </comp>
   </circuit>
 </project>
