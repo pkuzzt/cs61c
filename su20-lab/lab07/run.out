@@ -1,0 +1,19 @@
+Testing naive transpose: 0.003 milliseconds
+Testing transpose with blocking: 0.002 milliseconds
+Testing naive transpose: 0.66 milliseconds
+Testing transpose with blocking: 0.537 milliseconds
+Testing naive transpose: 6.019 milliseconds
+Testing transpose with blocking: 4.547 milliseconds
+Testing naive transpose: 76.264 milliseconds
+Testing transpose with blocking: 33.541 milliseconds
+Testing naive transpose: 373.645 milliseconds
+Testing transpose with blocking: 129.769 milliseconds
+-------------
+Testing naive transpose: 377.096 milliseconds
+Testing transpose with blocking: 87.868 milliseconds
+Testing naive transpose: 376.973 milliseconds
+Testing transpose with blocking: 82.139 milliseconds
+Testing naive transpose: 381.553 milliseconds
+Testing transpose with blocking: 98.269 milliseconds
+Testing naive transpose: 375.31 milliseconds
+Testing transpose with blocking: 367.832 milliseconds

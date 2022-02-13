@@ -16,6 +16,20 @@ void transpose_naive(int n, int blocksize, int *dst, int *src) {
  * multiple of the block size. */
 void transpose_blocking(int n, int blocksize, int *dst, int *src) {
     // YOUR CODE HERE
+    for (int x = 0; x < n; x += blocksize) {
+        for (int y = 0; y < n; y += blocksize) {
+            int x_max = x + blocksize;
+            int y_max = y + blocksize;
+            for (int xx = x; xx < x_max && xx < n; xx++) {
+                int tmp = xx * n;
+                int *dst1 = dst + tmp;
+                int *src1 = src + xx;
+                for (int yy = y; yy < y_max && yy < n; yy++) {
+                    dst1[yy] = src1[yy * n];
+                }
+            }
+        }
+    }
 }
 
 void benchmark(int *A, int *B, int n, int blocksize,
